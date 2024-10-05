@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.status-delivered {
+  background-color: green; /* Green for status 4 */
+  color: white; /* You can adjust the text color if needed */
+}
+
+.status-pending {
+  background-color: lightorange; /* Light orange for statuses 1, 2, 3 */
+}
