@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [userProfile, setUserProfile] = useState(null);
   const deviceId = getDeviceId();
   const userCookie = Cookies.get('user');
- 
+
   const Tokens = Cookies.get('Tokens');
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Dashboard = () => {
         }
       } catch (error) {
         toast.error('Error fetching profile');
-        handleLogout();
+        //  handleLogout();
       }
     };
     fetchUserProfile();
@@ -58,40 +58,40 @@ const Dashboard = () => {
 
   return (
     <Layout>
-    <Container className="mt-5">
-    <Row className="justify-content-center">
-      <Col md={6}>
-        <Card className="p-4">
-          <Card.Body>
-            <h1 className="text-center mb-4">Welcome, {userProfile.Name}!</h1> 
-            <h3 className="text-center mb-4">Wallet Balance: ₹{userProfile.WalletBalance}</h3>
+      <Container className="mt-5">
+        <Row className="justify-content-center">
+          <Col md={6}>
+            <Card className="p-4">
+              <Card.Body>
+                <h1 className="text-center mb-4">Welcome, {userProfile.Name}!</h1>
+                <h3 className="text-center mb-4">Wallet Balance: ₹{userProfile.WalletBalance}</h3>
 
-            <div className="text-center">
-              <Button
-                variant="primary"
-                className="mb-3"
-                onClick={() => navigate('/createorder')}
-              >
-                Create Order
-              </Button> <br />
-              <Button
-                variant="primary"
-                className="mb-3"
-                onClick={() => navigate('/AllOrders')}
-              >
-                All Orders
-              </Button>
-              <br />
-              <Button variant="secondary" onClick={handleLogout}>
-                Logout
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
-  </Container>
-  </Layout>
+                <div className="text-center">
+                  <Button
+                    variant="primary"
+                    className="mb-3"
+                    onClick={() => navigate('/createorder')}
+                  >
+                    Create Order
+                  </Button> <br />
+                  <Button
+                    variant="primary"
+                    className="mb-3"
+                    onClick={() => navigate('/AllOrders')}
+                  >
+                    All Orders
+                  </Button>
+                  <br />
+                  <Button variant="secondary" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
   );
 };
 

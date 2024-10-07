@@ -170,6 +170,7 @@ const AllOrders = () => {
                                         <td>{order.Source_Name}-{order.Source_MobileNo}<br />{order.Source_Address}</td>
                                         <td>{order.Destination_Name}-{order.Destination_Mobile}<br />{order.Destination_Address}</td>
                                         <td>{moment(order.PickDate).format('DD/MM/yyyy hh:mm A')}</td>
+                                        <td>{order.OrderDescription}<br />{order.DelBoyFullName}</td>
                                         <td>{getStatusLabel(order.Status)} </td>
                                     </tr>
                                 ))
